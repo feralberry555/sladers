@@ -1,0 +1,87 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: black;
+}
+
+.slider {
+	width: 500px;
+	height: 300px;
+	overflow: hidden;
+	border: 5px solid silver; /*габариты и внешний вид слайдера*/
+}
+
+.middle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /*нужны все стили, что бы сделать по центру слайдер*/
+}
+
+.navigation {
+	position: absolute;
+	bottom: 20px;
+	left: 50px;
+	transform: translate(50%, 60%);
+	display: flex;
+}
+
+.bar {               /*кнопки для переключения слайдов*/
+	height: 10px;
+	width: 30px;
+	margin: 6px;
+	cursor: pointer;
+	background-color: red;
+	opacity: .3;
+	border-radius: 10px;
+	transition: all 3s ease;
+}
+
+.bar:hover {
+	opacity: 1;
+	transform: scale(1.3); 
+}
+
+input[name='r'] {
+	position: absolute;
+	visibility: hidden; /*применяю эти стили что бы скрыть input*/
+}
+
+.slaides {
+	width: 500%;
+	height: 100%;
+	display: flex;
+}
+
+.slide {
+	width: 20%;
+	transition: all .6s ease;
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+}
+
+#r1:checked ~ .s1 {
+	margin-right: -20%;
+}
+
+#r2:checked ~ .s1 {
+	margin-right: -40%;
+}
+
+#r3:checked ~ .s1 {
+	margin-right: -60%;
+}
+
+#r4:checked ~ .s1 {
+	margin-right: -80%;
+}
+
+#r5:checked ~ .s1 {
+	margin-right: -100%;
+}
